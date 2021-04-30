@@ -4,6 +4,7 @@ public class Main {
     public static void main(String[] args) {
         Main main = new Main();
         int[] priceArray = main.getInput();
+        System.out.println( calculateMaxProfit(priceArray));
     }
 
     private int[] getInput() {
@@ -19,18 +20,18 @@ public class Main {
     }
 
 
-    public static int calculateMaxProfit(int[] arr) {
-        int lowestPriceTillThatDay = arr[0];
+    public static int calculateMaxProfit(int[] inputArray) {
+        int lowestPrice = inputArray[0];
         int maxProfit = Integer.MIN_VALUE;
-        for (int i = 0; i < arr.length; i++) {
+        for (int i = 0; i < inputArray.length; i++) {
             int profit = 0;
-            if (arr[i] > lowestPriceTillThatDay) {
-                profit = arr[i] - lowestPriceTillThatDay;
+            if (inputArray[i] > lowestPrice) {
+                profit = inputArray[i] - lowestPrice;
                 if (profit > maxProfit) {
                     maxProfit = profit;
                 }
             } else {
-                lowestPriceTillThatDay = arr[i];
+                lowestPrice = inputArray[i];
             }
         }
         return maxProfit;
