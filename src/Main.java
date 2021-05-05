@@ -7,6 +7,7 @@ public class Main {
         int result = calculateMaxProfit(priceArray);
         System.out.println("The most profit from this periods is: " + result);
     }
+
     private int[] getInput() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter number of days: ");
@@ -14,11 +15,12 @@ public class Main {
         int[] priceHistory = new int[daysNumber];
         System.out.println("Enter the each day price: ");
         for (int i = 0; i < daysNumber; i++) {
-            System.out.println("the Day number " + (i + 1) +" price is: ");
+            System.out.println("the Day number " + (i + 1) + " price is: ");
             priceHistory[i] = scanner.nextInt();
         }
         return priceHistory;
     }
+
     public static int calculateMaxProfit(int[] inputArray) {
         int lowestPrice = inputArray[0];
         int maxProfit = Integer.MIN_VALUE;
